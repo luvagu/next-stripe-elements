@@ -14,7 +14,7 @@ export default async function updatePaymentIntentHandler(req, res) {
 	try {
 		const { paymentId, amount, customer, email, invoice, phone } = req.body
 
-		// Create a PaymentIntent with the order amount, currency and any additional information
+		// Update a current PaymentIntent ID's information
 		const paymentIntent = await stripe.paymentIntents.update(paymentId, {
 			// payment_method_types: PAYMENT_METHODS,
 			amount: formatAmountForStripe(amount, CURRENCY),
